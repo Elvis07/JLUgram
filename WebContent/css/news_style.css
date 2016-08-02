@@ -1,0 +1,100 @@
+body{
+	background: #FBFBFB;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+a{
+	text-decoration: none;
+	font-size: 12px;
+}
+
+li{
+	list-style-type:none;
+}
+
+input,img{
+	border:none;
+}
+
+em{
+	font-style: normal;
+	font-size: 12px;
+}
+#focus_background{
+	
+	width:100%;
+	height:420px;
+	background: url(../images/new2.jpg)  center #FFFFFF;
+	
+	margin:0 0 0 0;
+}
+
+#focus_background #focus_box{
+	position: relative;
+	width:470px;
+	height:350px;
+	margin:0 auto;
+}
+#focus_box ul.smal_pic{
+	position: absolute;
+	top:450px;
+	left:0px;
+	width:600px;
+	height:50px;
+}
+#focus_box ul.smal_pic li{
+	overflow:hidden;
+	float: left;
+	width:66px;
+	height:43px;
+	margin-left: 11px;
+	border:1px solid #4E4E4E;
+}
+#focus_box ul.smal_pic li.hover{
+	border:2px solid #FFCC00;
+	margin-right: -2px;
+	margin-top: -1px;
+}
+#focus_box ul.smal_pic li a{
+	display: block;
+	position: relative;
+}
+#focus_box ul.smal_pic li a img{
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+
+#focus_box div.focus_title{
+	position: absolute;  
+	text-align: center; 
+	top:420px;
+	
+	width:100%;
+}
+#focus_box div.focus_title a{
+	display: block;
+	display: none;
+	position: absolute;
+	left:0px;
+	top:-8px;
+	font-size: 20px;
+	color:#fff;
+	font-family: "Microsoft Yahei";
+	font-weight: 400;
+}
+#other{
+	float:right;
+	margin-right:200px;
+}
+.backImg{
+	width:100%;
+	height:60px;
+	background:   center #FFFFFF;
+	
+	margin:0 0 0 0;
+}

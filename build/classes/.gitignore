@@ -1,0 +1,11 @@
+/applicationContext-bean.xml
+/applicationContext.xml
+/com/
+/db.properties
+/hibernate.cfg.xml
+/message.properties
+/message_en_US.properties
+/message_zh_CN.properties
+/page.properties
+/qqconnectconfig.properties
+/struts.xml

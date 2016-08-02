@@ -1,0 +1,61 @@
+/* CSS Document */
+/*login.html*/
+.ds{ width:100%; height:100%; position:absolute;left:0px; padding-left:0px; top:0px; bottom:0px; padding-bottom:0px;}
+.login_top{ width:100%; height:84px; position:relative; margin-left:0px; margin-right:0px;}
+.hr{ width:60%; height:10px; position:relative; margin-top:0px; margin-left:auto; margin-right:auto;}
+.login_window{ width:500px; height:265px; position:relative; margin-left:auto; margin-right:auto; margin-top:100px; border:dashed #0099CC;}
+.login_input{ width:280px; height:28px; }
+.login_button{ width:100px; height:30px; font-family:"ËÎÌå"; color:#FFFFFF; font-weight:bold; background-color:#0099CC; border:dotted; border-radius:2px; cursor:pointer;}
+.hr1{ width:60%; height:10px; position:relative; margin-top:100px; margin-left:auto; margin-right:auto;}
+.login_bottom{ width:100%; height:150px; position:relative; margin-left:0px; margin-right:0px; margin-top:0px; padding-top:0px;}
+/*index.html*/
+.index_all{width:100%; height:auto; position:absolute;left:0px; padding-left:0px; top:0px; bottom:0px; padding-bottom:0px; padding-right:0px;}
+.index_top{width:100%; height:100px; position:relative; margin-left:0px; margin-right:0px; padding-left:0px; }
+.left_logo{width:20px;; height:10px;;  position:relative; margin-left:0px; margin-top:0px; float:left; clear:both}
+.userinfo{ width:150px; height:100px; float:left; background-image:url(../images/user.png); background-repeat:no-repeat; position:relative; margin-left:650px; margin-top:0px; padding-top:0px; padding-left:0px;}
+.sueserinfo{ position:relative; margin-left:26px; margin-top:30px; font-family:"ËÎÌå"; font-size:18px; color:#FFFFFF;}
+.sinfo{ position:relative; margin-left:16px;font-family:"Î¢ÈíÑÅºÚ"; font-size:14px; color:#FFFFFF;}
+.logoff{ position:relative; margin-right:20px; margin-top:70px; width:60px;height:20px; float:right;   padding-left:11px; padding-top:6px; font:"Î¢ÈíÑÅºÚ"; color:#0099FF;  font-size:12px; cursor:pointer; font-weight:bold;}
+.logoff:hover{background:#0099FF; color:#FFFFFF;border-radius:20px; overflow:hidden;}
+.index_left{ width:13%; height:100%;  position:relative; margin-left:0px; margin-top:0px; float:left; clear:both; z-index:999;}
+.index_left ul{ width:100%; height:100%; margin-top:0px; margin-left:0px; padding-left:0px; padding-top:0px;}
+.index_left ul li{ list-style-type:none; width:100%; margin-left:0px; height:30px; text-align:center; padding-top:10px; font-family:"Î¢ÈíÑÅºÚ";}
+.index_left ul li.t1 {background-color:#00CCFF; color:#FFFFFF; border-right:solid #CC0000;}
+.index_left ul li.t2{background-color:#FFFFFF; border-right:solid #0000FF;}
+.index_left ul li.t3 {background-color:#CCCCCC; color:#FFFFFF; cursor:pointer;}
+.index_left ul li a{text-decoration:none; color:#FFFFFF;}
+.index_left ul li.t1 a{text-decoration:none; color:#FFFFFF;}
+.index_left ul li.t2 a{text-decoration:none; color:#000000;}
+.index_left ul li.t3 a{text-decoration:none; color:#FFFFFF;}
+.index_right{width:87%; height:100%; border:none; position:relative; margin-left:0px; margin-top:0px; float:right; }
+/*table.html*/
+.button_zone{width:210px; height:50px;position:relative; margin:0px 0px 0px 0px; float:left; z-index:999;}
+.button_zone ul{width:100%; height:50px; margin-top:0px; margin-left:0px; padding-left:0px; padding-top:0px;  }
+.button_zone ul li{ list-style-type:none; width:90px; height:35px; border:solid thin #d3dbde; border-radius:2px; float:left; margin-left:10px; cursor:pointer; padding:0 0 0 0; line-height:32px;}
+.button_zone ul li span{ font-family:"Î¢ÈíÑÅºÚ"; font-size:15px; margin-left:15px; padding-left:0px; padding-top:0px; font-weight:bold;}
+.input_zone{width:500px; height:50px;position:relative; margin:0px 0px 0px 0px; float:left; z-index:999;}
+.input_zone ul{width:100%; height:50px; margin-top:0px; margin-left:0px; padding-left:0px; padding-top:0px;  }
+.input_zone ul li{ list-style-type:none; width:160px; height:35px; float:left; margin-left:10px; cursor:pointer; padding:0 0 0 0; line-height:32px;}
+.input_text{ width:150px; height:21px;}
+.input_button{ width:95px; height:30px; background-image:url(../images/button.png);  border:none; color:#FFFFFF; font-family:"Î¢ÈíÑÅºÚ"; cursor:pointer;}
+.input_button:hover{ width:95px; height:30px; background-image:url(../images/button1.png);  border:none; color:#FFFFFF; font-family:"Î¢ÈíÑÅºÚ";}
+.tab_all{ width:100%; height:100%; position:relative; margin-left:0px; padding-left:auto; padding-right:auto; top:0px; margin-bottom:0px; padding-bottom:0px; }
+.tab_main{font-family:"Î¢ÈíÑÅºÚ"; font-stretch:expanded; border:solid thin #CCCCCC; margin-left:auto; margin-right:auto; border-radius:10px; overflow:hidden;}
+.tab_title{ background:#CCCCCC; font-size:14px;}
+.tab_list{ border-top:solid thin; font-size:14px;}
+.tab_main tr td{ border-top:solid thin #CCCCCC;}
+/*info.html*/
+.info{ position:absolute; top:0px; left:0px; padding-left:0px; width:100%;}
+.blue1{ height:24px; width:100%; background-color:#5ecfdf; position:absolute; left:0px; top:20px;}
+.flogo1{ position:absolute; top:0px;}
+.blog1{ position:absolute;width:600px; height:480px; background-image:url(../images/blog.png); background-repeat:no-repeat; top:66px; left:10px;}
+.textarea1{ position:absolute; width:440px; height:280px; top:200px; left:200px; font-family:"Î¢ÈíÑÅºÚ"; font-size:16px; color:#759bd2; padding-top:30px;}
+.blue2{ height:24px; width:100%; background-color:#5ecfdf; position:absolute; left:0px; top:540px;}
+.flogo2{ position:absolute; top:520px;}
+.blog2{ position:absolute;width:600px; height:480px; background-image:url(../images/blog.png); background-repeat:no-repeat; top:586px; left:10px;}
+.textarea2{ position:absolute; width:440px; height:280px; top:720px; left:80px; font:"ËÎÌå"; font-size:16px; color:#759bd2; padding-top:30px;}
+/*file.html*/
+.file{position:absolute; top:0px; left:0px; padding-left:0px; width:100%;}
+.sfile{ position:relative; width:100px; height:95px; float:left; margin-left:40px; margin-right:40px; margin-top:30px;}
+.sfile ul{width:100%; height:50px; margin-top:0px; margin-left:0px; padding-left:0px; padding-top:0px;  }
+.sfile ul li{ list-style-type:none; width:100px; height:79px; margin-left:0px; cursor:pointer; padding:0 0 0 0; font-size:14px; font-family:"ºÚÌå"; text-align:center;}

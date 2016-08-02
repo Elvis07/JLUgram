@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-3 23:34:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.jluzh.schoolbbs.entities.News" table="NEWS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="imgUrl" type="java.lang.String">
+            <column name="IMG_URL" />
+        </property>
+        <property name="launchTime" type="java.util.Date">
+            <column name="LAUNCH_TIME" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT" />
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="TITLE" />
+        </property>
+        <many-to-one name="admin" class="com.jluzh.schoolbbs.entities.Admin" >
+            <column name="ID_ADMIN" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

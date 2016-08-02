@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="500000000" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.custom.i18n.resources" value="message" />
+
+
+	<package name="defaults" extends="json-default">
+		<interceptors>
+			<interceptor-stack name="bbsStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- =================切换中英文===================== -->
+		<action name="i18n11" class="com.jluzh.schoolbbs.action.LanguageAction2">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="go*" class="com.jluzh.schoolbbs.action.ForI18N"
+			method="{1}">
+			<result name="index1">/index.jsp</result>
+			<result name="index3">/filehome.jsp</result>
+			<result name="reg">/regist.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="modPwd">/modifypwd.jsp</result>
+			<result name="UpdateInfo">/updateInfo.jsp</result>
+		</action>
+		<!-- =================用户层===================== -->
+		<action name="*user*" class="userAction" method="{1}user{2}">
+			<result name="{2}Login" type="json">/home_head.jsp</result><!--QQ登陆 -->
+			<result name="notexist" type="json"></result><!--注册校检返回 -->
+			<result name="{2}">/index.jsp</result><!--注销 -->
+			<result name="LoginSuccess">/index.jsp</result><!--成功登录 -->
+			<result name="{2}Fail">/login.jsp</result><!--登录失败 -->
+			<result name="Success{2}">/login.jsp</result><!--注册成功 -->
+			<result name="Fail{2}">/regist.jsp</result><!--注册失败 -->
+			<result name="user{2}">/userinfo.jsp</result><!--个人信息 -->
+			<result name="no{2}">/index.jsp</result><!--无个人信息 -->
+			<result name="moduser{2}">/login.jsp</result><!--修改密码成功 -->
+			<result name="input">/modifypwd.jsp</result><!--修改密码失败 -->
+			<result name="checkIn">/userinfo.jsp</result><!--签到成功 -->
+			<result name="modInfo">/userinfo.jsp</result><!--签到成功 -->
+			<result name="qqq">/index.jsp</result><!--签到成功 -->
+			<result name="Other">/otherinfo.jsp</result><!--他人信息 -->
+		</action>
+
+		<action name="userUpImg" class="userUpAvatarAction">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/bmp,
+					image/png,image/gif,image/jpeg,image/pjpeg</param>
+				<param name="maximumSize">2000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+			<param name="savePath">/avatar</param>
+			<result name="input">/userinfo.jsp</result>
+			<result name="updateImg">/userinfo.jsp</result><!--上传头像成功 -->
+			<result>/userinfo.jsp</result>
+		</action>
+
+		<!-- =================文件层===================== -->
+		<action name="filecatalog" class="fileCatalogAction" method="browseCatalog">
+			<result name="success">/filecatalogue.jsp</result>
+		</action>
+
+		<action name="fileshow" class="fileAction" method="showFileList">
+			<result name="fileok">/filehome.jsp</result>
+		</action>
+
+		<action name="uploadfile" class="fileAction" method="uploadFile">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">500000000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+			<param name="savePath">/fileres</param>
+			<result name="upFileOK" type="chain">fileshow</result><!--上传文件成功 -->
+			<result name="input" type="chain">fileshow</result>
+		</action>
+
+		<action name="downloadfile" class="fileAction">
+			<result name="success" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename="${downFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="deletefile" class="fileAction" method="delFileRes">
+			<result name="success" type="chain">fileshow</result>
+		</action>
+
+
+
+
+
+		<!-- =================app用户层===================== -->
+		<action name="AppUserAction_userRegist1" method="userRegist1"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+		<action name="AppUserAction_userLogin" method="userLogin"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+		<action name="AppUserAction_unameValidate" method="unameValidate"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+		<action name="AppUserAction_updateUinfo" method="updateUinfo"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+		<action name="AppUserAction_UpdateUImage" method="uploadImage"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+			<param name="savePath">/avatar</param>
+		</action>
+		<action name="AppUserAction_qqLogin" method="qqLogin"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+		<action name="AppUserAction_checkIn" method="checkIn"
+			class="com.jluzh.schoolbbs.appAction.AppUserAction">
+		</action>
+
+
+		<!-- =================app文件分类层===================== -->
+		<action name="AppCatalogAction_backCatalog" method="catalog"
+			class="com.jluzh.schoolbbs.appAction.AppFileCatalogAction">
+		</action>
+		<!-- =================app文件层===================== -->
+		<action name="AppFileAction_filelist" method="showlist"
+			class="com.jluzh.schoolbbs.appAction.AppFileResAction">
+		</action>
+		<action name="AppFileAction_delFile" method="delFile"
+			class="com.jluzh.schoolbbs.appAction.AppFileResAction">
+		</action>
+
+
+		<!-- ===================整合部分================================= -->
+		<!-- ===================后台的loginAction================= -->
+		<action name="admin_*" class="adminAction" method="{1}">
+			<interceptor-ref name="bbsStack"></interceptor-ref>
+			<result name="loginfail">admin/adminLogin.jsp</result>
+			<result name="login">/admin/home.jsp</result>
+		</action>
+		<!-- ===================后台的帖子模块管理Action================= -->
+		<action name="adminPPManage_*" class="adminPPManageAction"
+			method="{1}">
+			<interceptor-ref name="bbsStack"></interceptor-ref>
+			<result name="findAll">/admin/plate/list.jsp</result>
+			<result name="save" type="redirect">/adminPPManage_findAll</result>
+			<result name="delete" type="redirect">/adminPPManage_findAll</result>
+			<result name="input">/admin/plate/input.jsp</result>
+		</action>
+		<!-- ===================后台的用户帖子管理Action================= -->
+		<action name="adminUPManage_*" class="adminUPManageAction"
+			method="{1}">
+			<interceptor-ref name="bbsStack"></interceptor-ref>
+			<result name="findAll">/admin/post/list.jsp</result>
+			<result name="delete" type="redirect">/adminUPManage_findAll</result>
+			<result name="input">/admin/post/input.jsp</result>
+		</action>
+		<!-- ===================管理员资讯帖子管理Action================= -->
+		<action name="NewsManager_*" class="newsManagerAction" method="{1}">
+			<interceptor-ref name="bbsStack"></interceptor-ref>
+			<result name="findAll">/admin/news/list.jsp</result>
+			<result name="delete" type="redirect">/NewsManager_findAll</result>
+			<result name="find8News">/news.jsp</result>
+			<result name="input">/admin/news/input.jsp</result>
+			<result name="save" type="redirect">NewsManager_findAll</result>
+			<result name="findNewsDetail">/newsDetail.jsp</result>
+		</action>
+
+		<!-- ===================后台的用户管理Action================= -->
+		<action name="UserManager_*" class="userManagerAction" method="{1}">
+			<interceptor-ref name="bbsStack"></interceptor-ref>
+			<result name="findAll">/admin/user/list.jsp</result>
+			<result name="delete" type="redirect">/UserManager_findAll</result>
+			<result name="input">/admin/user/input.jsp</result>
+			<result name="save" type="redirect">/UserManager_findAll</result>
+		</action>
+
+		<!-- ===================链接安卓端Action================= -->
+		<action name="AppAdminAction_*" class="com.jluzh.schoolbbs.appAction.AppAdminAction"
+			method="{1}">
+		</action>
+		<action name="AppNewsManagerAction_*"
+			class="com.jluzh.schoolbbs.appAction.AppNewsManagerAction" method="{1}">
+		</action>
+		<action name="AppPostAction_*" class="com.jluzh.schoolbbs.appAction.AppPostAction"
+			method="{1}">
+		</action>
+		<action name="AppReplyAction_*" class="com.jluzh.schoolbbs.appAction.AppReplyAction"
+			method="{1}"></action>
+
+		<!-- ===================tengttttttttttttttttt================= -->
+		<action name="appPostAction-*" method="{1}"
+			class="com.jluzh.schoolbbs.appAction.PostAction">
+			<param name="savepath">/post1</param>
+		</action>
+		<action name="appPlateAction-*" method="{1}"
+			class="com.jluzh.schoolbbs.appAction.PlateAction">
+		</action>
+		<action name="appReplyAction-*" method="{1}"
+			class="com.jluzh.schoolbbs.appAction.ReplyAction">
+		</action>
+		<!-- ===================Teng Action================= -->
+
+		<!-- post === -->
+		<action name="post-*" class="postAction" method="{1}">
+			<param name="savePath">/post1</param>
+			<result name="success" type="chain">post-list</result>
+			<result name="input" type="chain">post-list</result>
+			<result name="list">/post/index.jsp</result>
+			<result name="save" type="chain">plate-list</result>
+			<result name="delete" type="chain">plate-list</result>
+			<result name="reply" type="chain">/post/postdetail.jsp</result>
+			<result name="listbyid" type="chain">reply-listbyid</result>
+		</action>
+		<!--reply === -->
+		<action name="reply-*" class="replyAction" method="{1}">
+			<result name="save" type="chain">post-listbyid</result>
+			<result name="list">/post/postdetail.jsp</result>
+			<result name="listbyid">/post/postdetail.jsp</result>
+			<result name="delete" type="chain">post-listbyid</result>
+			<result name="error" type="chain">/reply/error.jsp</result>
+
+		</action>
+
+		<!--plate === -->
+		<action name="plate-*" class="plateAction" method="{1}">
+			<result name="list">/plate/plate.jsp</result>
+			<result name="error" type="chain">/reply/error.jsp</result>
+
+		</action>
+
+	</package>
+
+
+
+</struts>

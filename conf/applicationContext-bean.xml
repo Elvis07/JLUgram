@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!--=========================== dao层 ================================ -->
+
+	<bean id="userDao" class="com.jluzh.schoolbbs.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fileCatalogDao" class="com.jluzh.schoolbbs.dao.FileCatalogDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fileDao" class="com.jluzh.schoolbbs.dao.FileDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="adminDao" class="com.jluzh.schoolbbs.dao.AdminDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="adminPPManageDao" class="com.jluzh.schoolbbs.dao.AdminPPManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="adminUPManageDao" class="com.jluzh.schoolbbs.dao.AdminUPManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="newsManagerDao" class="com.jluzh.schoolbbs.dao.NewsManagerDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userManagerDao" class="com.jluzh.schoolbbs.dao.UserManagerDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="plateDao" class="com.jluzh.schoolbbs.dao.PlateDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="postDao" class="com.jluzh.schoolbbs.dao.PostDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="replyDao" class="com.jluzh.schoolbbs.dao.ReplyDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!--=========================== service层 ================================ -->
+
+	<bean id="userService" class="com.jluzh.schoolbbs.service.UserService">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="fileCatalogService" class="com.jluzh.schoolbbs.service.FileCatalogService">
+		<property name="fileCatalogDao" ref="fileCatalogDao"></property>
+	</bean>
+	<bean id="fileService" class="com.jluzh.schoolbbs.service.FileService">
+		<property name="filedao" ref="fileDao"></property>
+	</bean>
+	<bean id="adminService" class="com.jluzh.schoolbbs.service.AdminService">
+		<property name="amdinDao" ref="adminDao"></property>
+	</bean>
+
+	<bean id="adminPPManageService" class="com.jluzh.schoolbbs.service.AdminPPManageService">
+		<property name="adminPPManageDao" ref="adminPPManageDao"></property>
+	</bean>
+	<bean id="adminUPManageService" class="com.jluzh.schoolbbs.service.AdminUPManageService">
+		<property name="adminUPManageDao" ref="adminUPManageDao"></property>
+	</bean>
+	<bean id="newsManagerService" class="com.jluzh.schoolbbs.service.NewsManagerService">
+		<property name="newsManagerDao" ref="newsManagerDao"></property>
+	</bean>
+	<bean id="userManagerService" class="com.jluzh.schoolbbs.service.UserManagerService">
+		<property name="userManagerDao" ref="userManagerDao"></property>
+	</bean>
+	<bean id="plateService" class="com.jluzh.schoolbbs.service.PlateService">
+		<property name="plateDao" ref="plateDao"></property>
+	</bean>
+	<bean id="postService" class="com.jluzh.schoolbbs.service.PostService">
+		<property name="postDao" ref="postDao"></property>
+	</bean>
+	<bean id="replyService" class="com.jluzh.schoolbbs.service.ReplyService">
+		<property name="replyDao" ref="replyDao"></property>
+	</bean>
+
+	<!--=========================== Action层 ================================ -->
+	<bean id="adminAction" class="com.jluzh.schoolbbs.action.AdminAction"
+		scope="prototype">
+		<property name="adminService" ref="adminService"></property>
+
+	</bean>
+
+	<bean id="adminPPManageAction" class="com.jluzh.schoolbbs.action.AdminPPManageAction"
+		scope="prototype">
+		<property name="adminPPManageService" ref="adminPPManageService"></property>
+	</bean>
+	<bean id="adminUPManageAction" class="com.jluzh.schoolbbs.action.AdminUPManageAction"
+		scope="prototype">
+		<property name="adminUPManageService" ref="adminUPManageService"></property>
+	</bean>
+	<bean id="newsManagerAction" class="com.jluzh.schoolbbs.action.NewsManagerAction"
+		scope="prototype">
+		<property name="newsManagerService" ref="newsManagerService"></property>
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+	<bean id="userManagerAction" class="com.jluzh.schoolbbs.action.UserManagerAction"
+		scope="prototype">
+		<property name="userManagerService" ref="userManagerService"></property>
+	</bean>
+	<bean id="plateAction" class="com.jluzh.schoolbbs.action.PlateAction"
+		scope="prototype">
+		<property name="plateService" ref="plateService"></property>
+	</bean>
+	<bean id="postAction" class="com.jluzh.schoolbbs.action.PostAction"
+		scope="prototype">
+		<property name="plateService" ref="plateService"></property>
+		<property name="postService" ref="postService"></property>
+	</bean>
+	<bean id="replyAction" class="com.jluzh.schoolbbs.action.ReplyAction"
+		scope="prototype">
+		<property name="replyService" ref="replyService"></property>
+	</bean>
+
+	<bean id="userAction" class="com.jluzh.schoolbbs.action.UserAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="userUpAvatarAction" class="com.jluzh.schoolbbs.action.UserUpAvatarAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="fileCatalogAction" class="com.jluzh.schoolbbs.action.FileCatalogAction"
+		scope="prototype">
+		<property name="fileCatalogService" ref="fileCatalogService"></property>
+	</bean>
+	<bean id="fileAction" class="com.jluzh.schoolbbs.action.FileAction"
+		scope="prototype">
+		<property name="fileService" ref="fileService"></property>
+	</bean>
+
+
+	<!--=========================== AppAction层 ================================ -->
+	<!-- <bean id="appUserAction" class="com.jluzh.schoolbbs.appAction.AppUserAction" 
+		scope="prototype"> <property name="userService" ref="userService"></property> 
+		</bean> -->
+
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="antlr-2.7.7.jar" local="131071019510523300" remote="131071015910000000" testing="0" />
+<file name="asm-3.3.jar" local="131071072026567046" remote="131071071750000000" testing="0" />
+<file name="asm-commons-3.3.jar" local="131071072024476926" remote="131071071750000000" testing="0" />
+<file name="asm-tree-3.3.jar" local="131071072024726941" remote="131071071750000000" testing="0" />
+<file name="c3p0-0.9.1.2.jar" local="131071031907552370" remote="131071028800000000" testing="0" />
+<file name="com.springsource.net.sf.cglib-2.2.0.jar" local="131071016673301020" remote="131071015910000000" testing="0" />
+<file name="com.springsource.org.aopalliance-1.0.0.jar" local="131071016673481031" remote="131071015910000000" testing="0" />
+<file name="com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" local="131071016673911055" remote="131071015910000000" testing="0" />
+<file name="commons-fileupload-1.3.jar" local="131071072025086961" remote="131071071750000000" testing="0" />
+<file name="commons-io-2.0.1.jar" local="131071072025266972" remote="131071071750000000" testing="0" />
+<file name="commons-lang3-3.1.jar" local="131071072025406980" remote="131071071750000000" testing="0" />
+<file name="commons-logging-1.1.3.jar" local="131071016674121067" remote="131071015910000000" testing="0" />
+<file name="dom4j-1.6.1.jar" local="131071019510593304" remote="131071015910000000" testing="0" />
+<file name="fastjson-1.2.1.jar" local="131082848022252091" remote="131082844250000000" testing="0" />
+<file name="freemarker-2.3.19.jar" local="131071072025626992" remote="131071071750000000" testing="0" />
+<file name="hibernate-commons-annotations-4.0.2.Final.jar" local="131071019510763314" remote="131071015910000000" testing="0" />
+<file name="hibernate-core-4.2.4.Final.jar" local="131071019511383349" remote="131071015910000000" testing="0" />
+<file name="hibernate-jpa-2.0-api-1.0.1.Final.jar" local="131071019511493356" remote="131071015910000000" testing="0" />
+<file name="javassist-3.15.0-GA.jar" local="131071019511633364" remote="131071015910000000" testing="0" />
+<file name="jboss-logging-3.1.0.GA.jar" local="131071019511753370" remote="131071015910000000" testing="0" />
+<file name="jboss-transaction-api_1.1_spec-1.0.1.Final.jar" local="131071019512103390" remote="131071015910000000" testing="0" />
+<file name="log4j-1.2.17.jar" local="131071072025807003" remote="131071071750000000" testing="0" />
+<file name="mysql-connector-java-5.1.7-bin.jar" local="131071059348561906" remote="131071058860000000" testing="0" />
+<file name="ognl-3.0.6.jar" local="131071072025967012" remote="131071071750000000" testing="0" />
+<file name="spring-aop-4.0.0.RELEASE.jar" local="131071016674281076" remote="131071015910000000" testing="0" />
+<file name="spring-aspects-4.0.0.RELEASE.jar" local="131071016674471087" remote="131071015910000000" testing="0" />
+<file name="spring-beans-4.0.0.RELEASE.jar" local="131071016674761104" remote="131071015910000000" testing="0" />
+<file name="spring-context-4.0.0.RELEASE.jar" local="131071016674941114" remote="131071015910000000" testing="0" />
+<file name="spring-core-4.0.0.RELEASE.jar" local="131071016675141126" remote="131071015910000000" testing="0" />
+<file name="spring-expression-4.0.0.RELEASE.jar" local="131071016675411141" remote="131071015910000000" testing="0" />
+<file name="spring-jdbc-4.0.0.RELEASE.jar" local="131071016675591151" remote="131071015910000000" testing="0" />
+<file name="spring-orm-4.0.0.RELEASE.jar" local="131071016675771162" remote="131071015910000000" testing="0" />
+<file name="spring-tx-4.0.0.RELEASE.jar" local="131071016675861167" remote="131071015910000000" testing="0" />
+<file name="spring-web-4.0.0.RELEASE.jar" local="131071016676121182" remote="131071015910000000" testing="0" />
+<file name="spring-webmvc-4.0.0.RELEASE.jar" local="131071016676261190" remote="131071015910000000" testing="0" />
+<file name="struts2-core-2.3.15.3.jar" local="131071072026147022" remote="131071071750000000" testing="0" />
+<file name="struts2-json-plugin-2.3.16.3.jar" local="131078887306203331" remote="131078884290000000" testing="0" />
+<file name="struts2-spring-plugin-2.3.15.3.jar" local="131071074033981864" remote="131071071750000000" testing="0" />
+<file name="xwork-core-2.3.15.3.jar" local="131071072026397036" remote="131071071750000000" testing="0" />
+</dwsync>
